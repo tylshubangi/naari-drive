@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Naari Drive🚗</title>
+        
+        <link rel ="stylesheet" href="home2.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body style="margin: 0%; padding: 0%;">
+        
+        <div class="bg-container col-12">
+            
+            <div class="navbar d-flex flex-row">
+                <img src="woman-profile.png" class="navbar-images">
+                <h1 class="navbar-heading">Naari Drive</h1>
+                <img src="settings.png" class="navbar-images">
+            </div>
+            <div class="d-flex flex-column">
+                <!--<div class="search-location">-->
+                    <form action="/submit" method="post">
+                        <input type="text" class="search-location" id="username" name="username" value="Nitte Meenakshi Institute of Technology" required>
+                        <input type="text" class="search-location" id="username" name="username" value="Vasavi Homes" required>
+                        <br>
+                    </form>
+                    <!-- <button class="submitButton" onclick="gotohome2()">-→</button> -->
+                <!--</div>-->
+                <!-- <div class="search-location">
+                    <p>going to</p>
+                </div> -->
+            </div>
+            <!-- <img src="bookride.png" style="margin-top: auto;"> -->
+            
+            <div>
+                <div class="d-flex flex-column rides" id="Rides">
+                    <div class="d-flex flex-row justify-content-space-evenly">
+                        <button onclick="bike()" class="d-flex flex-column justify-content-center vehicles">
+                            <p>Bike</p>
+                            <img src="bike.png" class="vehicles-img">
+                            <p>₹40</p>
+                        </button>
+                        <button onclick="auto()" class="d-flex flex-column justify-content-center vehicles">
+                            <p>Auto</p>
+                            <img src="auto.png" class="vehicles-img">
+                            <p>₹80</p>
+                        </button>
+                        <button onclick="taxi()" class="d-flex flex-column justify-content-center vehicles">
+                            <p>Taxi</p>
+                            <img src="taxi.png" class="vehicles-img">
+                            <p>₹140</p>
+                        </button>
+                        <button onclick="packages()" class="d-flex flex-column justify-content-center vehicles">
+                            <p>Package</p>
+                            <img src="package.png" class="vehicles-img">
+                            <p>₹30</p>
+                        </button>
+                    </div>
+                    <button id="bookRide" onclick="bookride()" class="submitButton">Book Ride</button>
+                </div>
+                <div style="background-color: rgba(245, 245, 245, 0.666); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                    <p style="color: brown; text-align: center; font-size: 40px;" id="extraP"></p>
+                    <p style="color: brown; font-size: 40px; text-align: center; text-decoration: underline;" id="extraS"></p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script>
+            function bike(){
+                document.getElementById('bookRide').textContent = 'Book Bike(₹40)';
+                document.getElementById('extraP').textContent = "";
+                document.getElementById('extraS').textContent = "";
+            }
+            function auto(){
+                document.getElementById('bookRide').textContent = 'Book Auto(₹80)';
+                document.getElementById('extraP').textContent = "";
+                document.getElementById('extraS').textContent = "";
+            }
+            function taxi(){
+                document.getElementById('bookRide').textContent = 'Book Taxi(₹140)';
+                document.getElementById('extraP').textContent = "";
+                document.getElementById('extraS').textContent = "";
+            }
+            function packages(){
+                document.getElementById('bookRide').textContent = 'Book Package Delivery(₹30)';
+                document.getElementById('extraP').textContent = "";
+                document.getElementById('extraS').textContent = "";
+            }
+            function bookride(){
+                if(document.getElementById('bookRide').textContent === 'Book Ride'){
+                    document.getElementById('extraP').textContent = "Select a ride";
+                    document.getElementById('Rides').style.borderBottomLeftRadius = '0px';
+                    document.getElementById('Rides').style.borderBottomRightRadius = '0px';
+                }else if(document.getElementById('bookRide').textContent === 'Book Bike(₹40)'){
+                    document.getElementById('extraP').textContent = "Booking a bike for your safe travel...";
+                    document.getElementById('extraS').textContent = "cancel?";
+                    document.getElementById('Rides').style.borderBottomLeftRadius = '0px';
+                    document.getElementById('Rides').style.borderBottomRightRadius = '0px';
+                }else if(document.getElementById('bookRide').textContent === 'Book Auto(₹80)'){
+                    document.getElementById('extraP').textContent = "Booking a auto for your safe travel...";
+                    document.getElementById('extraS').textContent = "cancel?";
+                    document.getElementById('Rides').style.borderBottomLeftRadius = '0px';
+                    document.getElementById('Rides').style.borderBottomRightRadius = '0px';
+                }else if(document.getElementById('bookRide').textContent === 'Book Taxi(₹140)'){
+                    document.getElementById('extraP').textContent = "Booking a Taxi for your safe travel...";
+                    document.getElementById('extraS').textContent = "cancel?";
+                    document.getElementById('Rides').style.borderBottomLeftRadius = '0px';
+                    document.getElementById('Rides').style.borderBottomRightRadius = '0px';
+                }else if(document.getElementById('bookRide').textContent === 'Book Package Delivery(₹30)'){
+                    document.getElementById('extraP').textContent = "Booking a ride for your package delivery...";
+                    document.getElementById('extraS').textContent = "cancel?";
+                    document.getElementById('Rides').style.borderBottomLeftRadius = '0px';
+                    document.getElementById('Rides').style.borderBottomRightRadius = '0px';
+                }
+            }
+        </script>
+    </body>
+</html>
